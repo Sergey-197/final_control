@@ -1,6 +1,6 @@
-﻿ string[] array1 = new string[6] {"3", "700", "Kazan", "Uhta", "computer",":"};
-string[] array2 = new string[array1.Length];
-void SecondArray(string[] array1, string[] array2)
+﻿  string[] array1 = new string[6] {"3", "700", "Kazan", "Uhta", "computer",":"};
+  string[] array2 = new string[array1.Length];
+ 
 {
     int count = 0;
     for (int i = 0; i < array1.Length; i++)
@@ -10,15 +10,9 @@ void SecondArray(string[] array1, string[] array2)
         array2[count] = array1[i];
         count++;
         }
-    }
-}   
-void PrintArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
+ 
+        Console.Write($"{array1[i]} ");
     }
     Console.WriteLine();
 }
-SecondArray(array1, array2);
-PrintArray(array2);
+ 
