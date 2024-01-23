@@ -1,42 +1,24 @@
-﻿ using System;
-
-class Program
+﻿ string[] array1 = new string[6] {"3", "700", "Kazan", "Uhta", "computer",":"};
+string[] array2 = new string[array1.Length];
+void SecondArray(string[] array1, string[] array2)
 {
-    static void Main(string[] args)
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
     {
-        Console.WriteLine("Введите элементы массива через пробел:");
-        string input = Console.ReadLine();
-        string[] inputArray = input.Split(' ');
-        string[] resultArray = GetStringsLength(inputArray);
-
-        Console.WriteLine("Результат:");
-        Console.WriteLine(string.Join(", ", resultArray));
+    if(array1[i].Length <= 3)
+        {
+        array2[count] = array1[i];
+        count++;
+        }
     }
-
-    static string[] GetStringsLength(string[] inputArray)
+}   
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
     {
-        int count = 0;
-        for (int i = 0; i < inputArray.Length; i++)
-        {
-            if (inputArray[i].Length <= 3)
-            {
-                count++;
-            }
-        }
-
-        string[] resultArray = new string[count];
-        int index = 0;
-        for (int i = 0; i < inputArray.Length; i++)
-        {
-            if (inputArray[i].Length <= 3)
-            {
-                resultArray[index] = inputArray[i];
-                index++;
-            }
-        }
-
-        return resultArray;
+        Console.Write($"{array[i]} ");
     }
+    Console.WriteLine();
 }
- 
- 
+SecondArray(array1, array2);
+PrintArray(array2);
